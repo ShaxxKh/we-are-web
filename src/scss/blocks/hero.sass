@@ -1,0 +1,168 @@
+.hero
+    position: absolute
+    width: 100%
+    height: 100vh
+    background-color: $colorBackground
+    z-index: -1
+    transition: 1s transform
+
+.hero__carousel-text
+    width: 600px
+
+@mixin glitchCopy
+		content: attr(data-text)
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+        font-size: 75px
+        font-family: $fontPrimary
+        text-transform: uppercase
+        color: $colorWhite
+
+.carousel-text__heading
+    cursor: grab
+    font-size: 75px
+    font-family: $fontPrimary
+    text-transform: uppercase
+    color: $colorWhite
+    position: relative
+    animation: glitch-skew 1s infinite linear alternate-reverse
+
+    &::before
+        @include glitchCopy
+        left: 2px
+        text-shadow: -2px 0 #ff00c1
+        clip: rect(44px, 450px, 56px, 0)
+        animation: glitch-anim 5s infinite linear alternate-reverse
+
+    &::before
+        @include glitchCopy
+        left: -2px
+        text-shadow: -2px 0 #00fff9 2px 2px #ff00c1
+        animation: glitch-anim2 1s infinite linear alternate-reverse
+    
+@keyframes glitch-anim
+    $steps: 20
+    @for $i from 0 through $steps
+        #{percentage($i*(1/$steps))}
+            opacity: percentage($i*(1/$steps))
+            clip: rect(random(100)+px, 9999px, random(100)+px, 0)
+            transform: skew((random(100) / 100) + deg)
+    
+@keyframes glitch-anim2
+    $steps: 20
+    @for $i from 0 through $steps
+        #{percentage($i*(1/$steps))}
+            opacity: percentage($i*(1/$steps))
+            clip: rect(random(100)+px, 9999px, random(100)+px, 0)
+            transform: skew((random(100) / 100) + deg)
+        
+@keyframes glitch-skew
+    $steps: 10
+    @for $i from 0 through $steps
+        #{percentage($i*(1/$steps))}
+            /** opacity: percentage($i*(1/$steps)) **/
+            transform: skew((random(10) - 5) + deg)
+
+.carousel-images
+    width: 25vh
+    
+#carousel-images__img
+    width: 25vw
+    height: 50vh
+
+.hero__carousel-wrapper
+    display: flex
+    width: 100%
+    height: fit-content
+    align-items: center
+    justify-content: space-between
+    margin-top: 10vh
+
+.carousel-images__item
+    cursor: grab
+    width: fit-content
+    height: fit-content
+
+.background-text
+    cursor: default
+    display: flex
+    justify-content: space-between
+    height: 100%
+    flex-direction: column
+    color: $colorWhite
+    opacity: 0.03
+    font-size: 2500%
+    font-weight: 700
+    text-transform: uppercase
+    position: absolute
+    top: 0
+    left: 0
+    font-family: "DejaVu Sans Mono", sans-serif, monospace
+    z-index: -99
+
+.contacts
+    outline: none
+    position: absolute
+    background: none
+    padding: 25px
+    border: 3.3px solid #A337B2
+    box-shadow: 0px 0px 12.4539px #A337B2
+    border-radius: 100%
+    cursor: pointer
+    transition: 0.5s all
+
+.contacts--close
+    outline: none
+    background-color: #A337B2
+    opacity: 0
+    z-index: -1
+
+.start-btn
+    width: 306px
+    height: 78px
+    background: none
+    border: 3.73617px solid #A337B2
+    box-shadow: 0px 0px 12.4539px #A337B2
+    border-radius: 46.0794px
+    font-family: $fontSecondary
+    font-size: 25px
+    /** line-height: 20% **/
+    color: $colorWhite
+    /** padding: 25px 40px 25px 40px **/
+
+.links-container
+    position: relative
+    margin-top: 12vh
+    display: flex
+    width: 100%
+    justify-content: space-between
+    align-items: flex-start
+
+.background-text__first, .background-text__second, .background-text__third
+    height: -webkit-fill-available
+    overflow: hidden
+
+.contacts-button-container
+    position: relative
+
+.social-media
+    position: absolute
+    left: 150px
+    /** opacity: 0 **/
+    /** transition: 3s all **/
+
+.social-media__icon
+    width: 20px
+    height: 20px
+    vertical-align: sub
+
+.social-media__link
+    background-color: #A337B2
+    padding: 17px
+    border-radius: 100%
+    opacity: 0
+    transition: 1s all
+    z-index: -1

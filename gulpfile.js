@@ -8,20 +8,23 @@ let path = {
         lib: projectFolder + "/lib/",
         js: projectFolder + "/js/",
         img: projectFolder + "/img/",
+        fonts: projectFolder + "/fonts/"
     },
     src: {
         html: sourceFolder + "/index.html",
         scss: sourceFolder + "/scss/style.sass",
         lib: sourceFolder + "/scss/*.css",
         js: sourceFolder + "/js/*.js",
-        img: sourceFolder + "/**/*.{jpg,svg,png,ico,gif,webp}",
+        img: sourceFolder + "/img/*.{jpg,svg,png,ico,gif,webp}",
+        fonts: sourceFolder + "/fonts/*.ttf",
     },
     watch: {
         html: sourceFolder + "/**/*.html",
         scss: sourceFolder + "/scss/**/*.sass",
         lib: sourceFolder + "/scss/*.css",
         js: sourceFolder + "/js/**/*.js",
-        img: sourceFolder + "/**/*.{jpg,svg,png,ico,gif,webp}",
+        img: sourceFolder + "/img/*.{jpg,svg,png,ico,gif,webp}",
+        fonts: sourceFolder + "/fonts/*.ttf",
     },
     clean: "./" + projectFolder + "/"
 }
@@ -87,19 +90,26 @@ function images() {
         .pipe(browsersync.stream());
 }
 
+function fonts() {
+    return gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.build.fonts))
+        .pipe(browsersync.stream());
+}
+
 function watchFiles() {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.scss], scss);
     gulp.watch([path.watch.lib], lib);
     gulp.watch([path.watch.js], js);
     gulp.watch([path.watch.img], images);
+    gulp.watch([path.watch.fonts], fonts);
 }
 
 function clean(params) {
     return del(path.clean)
 }
 
-let build = gulp.series(clean, gulp.parallel(lib, scss, html, js, images));
+let build = gulp.series(clean, gulp.parallel(lib, scss, html, js, images, fonts));
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.html = html;
@@ -107,6 +117,7 @@ exports.images = images;
 exports.js = js;
 exports.lib = lib;
 exports.scss = scss;
+exports.fonts = fonts;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;

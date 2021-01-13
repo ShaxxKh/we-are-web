@@ -3,15 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>We Are Web</title>
     <link rel="stylesheet" href="./lib/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./lib/owl.theme.default.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <script src="./js/script.js"></script>
+    <div id="preload-page" class="preload-page">
+        <div class="preload">
+            <div class="owl-carousel preload-carousel greeting" id="preload-carousel">
+                <div><h2 class="greeting-russian">Здравствуйте!</h2></div>
+                <div><h2 class="greeting-uzbek">Assalom Alaykum!</h2></div>
+                <div><h2 class="greeting-english">Hello!</h2></div>
+            </div>
+            <h2 id="loaded-percent" class="loaded-percent">0%</h2>
+        </div>
+    </div>
+
+    <main class="main">
+        <section class="main__hero hero">
+            <div class="hero__container container">
+                <div class="hero__background-text background-text"><div class="background-text__first hidden">We</div><div class="background-text__second hidden">are</div><div class="background-text__third hidden">web</div></div>
+                <div class="hero__header header">
+                    <a href="#" class="header__logo logo"><img src="./img/logo.svg" alt="logo"></a>
+                    <nav class="header__nav nav hidden">
+                        <ul class="nav__list list">
+                            <li class="nav__list-item"><a href="#" class="nav__list-link nav__list-link--active">Главная</a></li>
+                            <li class="nav__list-item"><a href="#" class="nav__list-link">Услуги</a></li>
+                            <li class="nav__list-item"><a href="#" class="nav__list-link">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="hero__carousel-wrapper">
+                    <div class="owl-carousel hero__carousel-text carousel-text">
+                        <h2 class="carousel-text__heading" data-text="Под разный бюджет и под ключ!">Под разный бюджет и под ключ!</h2>
+                        <h2 class="carousel-text__heading" data-text="Разработка сайтов">Разработка сайтов</h2>
+                        <h2 class="carousel-text__heading" data-text="Любой сложности">Любой сложности</h2>
+                    </div>
+                    <div class="owl-carousel hero__carousel-images carousel-images hidden">
+                        <div class="carousel-images__item"><img id="carousel-images__img" src="./img/hero-1.jpg"></div>
+                        <div class="carousel-images__item"><img id="carousel-images__img" src="./img/hero-1.jpg"></div>
+                        <div class="carousel-images__item"><img id="carousel-images__img" src="./img/hero-1.jpg"></div>
+                    </div>
+                </div>
+                <div class="hero__links-container links-container">
+                    <div class="contacts-button-container">
+                        <button class="hero__contacts contacts contacts--open"><img src="./img/phone.svg" alt="contacts-button"></button>
+                        <button class="hero__contacts contacts contacts--close"><img src="./img/cross.svg" alt="contacts-close-button"></button>
+                    </div>
+                    <div class="hero__social-media social-media">
+                        <a target="_blank" href="https://www.google.com/" class="social-media__link"><img class="social-media__icon" src="./img/instagram.svg" alt="phone"></a>
+                        <a href="#" class="social-media__link"><img class="social-media__icon" src="./img/facebook.svg" alt="facebook"></a>
+                        <a href="#" class="social-media__link"><img class="social-media__icon" src="./img/twitter.svg" alt="twitter"></a>
+                        <a href="#" class="social-media__link"><img class="social-media__icon" src="./img/phone-call.svg" alt="phone-call"></a>
+                        <a href="#" class="social-media__link"><img class="social-media__icon" src="./img/mail.svg" alt="mail"></a>
+                    </div>
+                    <button class="hero__start-btn start-btn">начать_[проект]</button>
+                </div>
+            </div>
+        </section>
+        <section class="main__catalogue catalogue">
+            <div class="catalogue__container container">
+                <div class="catalogue__background-text background-text"><div class="background-text__first">We</div><div class="background-text__second">are</div><div class="background-text__third">web</div></div>
+                <div class="catalogue__header header">
+                    <a href="#" class="header__logo logo"><img src="./img/logo.svg" alt="logo"></a>
+                    <nav class="header__nav nav hidden">
+                        <ul class="nav__list list">
+                            <li class="nav__list-item"><a href="#" class="nav__list-link nav__list-link--active">Главная</a></li>
+                            <li class="nav__list-item"><a href="#" class="nav__list-link">Услуги</a></li>
+                            <li class="nav__list-item"><a href="#" class="nav__list-link">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="catalogue__list-container">
+                    <ul class="catalogue__list">
+                        <li class="catalogue__list-item catalogue__list-item--active">
+                            <span class="catalogue__service">Landing Page</span>
+                            <div class="catalogue__images-container">
+                                <img class="catalogue__image" src="./img/arrow-top-right-white.svg" alt="arrow">
+                                <img class="catalogue__image hidden" src="./img/arrow-top-right-purple.svg" alt="arrow-active">
+                            </div>
+                        </li>
+                        <li class="catalogue__list-item catalogue__list-item--active">
+                            <span class="catalogue__service">Сайт каталог</span>
+                            <div class="catalogue__images-container">
+                                <img class="catalogue__image" src="./img/arrow-top-right-white.svg" alt="arrow">
+                                <img class="catalogue__image hidden" src="./img/arrow-top-right-purple.svg" alt="arrow-active">
+                            </div>
+                        </li>
+                        <li class="catalogue__list-item catalogue__list-item--active">
+                            <span class="catalogue__service">Корпоративные сайты</span>
+                            <div class="catalogue__images-container">
+                                <img class="catalogue__image" src="./img/arrow-top-right-white.svg" alt="arrow">
+                                <img class="catalogue__image hidden" src="./img/arrow-top-right-purple.svg" alt="arrow-active">
+                            </div>
+                        </li>
+                        <li class="catalogue__list-item catalogue__list-item--active">
+                            <span class="catalogue__service">Интернет магазины</span>
+                            <div class="catalogue__images-container">
+                                <img class="catalogue__image" src="./img/arrow-top-right-white.svg" alt="arrow">
+                                <img class="catalogue__image hidden" src="./img/arrow-top-right-purple.svg" alt="arrow-active">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="links-container catalogue__links-container">
+                    <div class="contacts-button-container">
+                        <button class="catalogue__contacts contacts contacts--open"><img src="./img/phone.svg" alt="contacts-button"></button>
+                        <button class="catalogue__contacts contacts contacts--close"><img src="./img/cross.svg" alt="contacts-close-button"></button>
+                    </div>
+                    <div class="catalogue__social-media social-media">
+                        <a target="_blank" href="https://www.google.com/" class="social-media__link"><img class="social-media__icon" src="./img/instagram.svg" alt="phone"></a>
+                        <a href="#" class="social-media__link"><img class="social-media__icon" src="./img/facebook.svg" alt="facebook"></a>
+                        <a href="#" class="social-media__link"><img class="social-media__icon" src="./img/twitter.svg" alt="twitter"></a>
+                        <a href="#" class="social-media__link"><img class="social-media__icon" src="./img/phone-call.svg" alt="phone-call"></a>
+                        <a href="#" class="social-media__link"><img class="social-media__icon" src="./img/mail.svg" alt="mail"></a>
+                    </div>
+                    <button class="catalogue__start-btn start-btn">начать_[проект]</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/jquery.js"></script>
     <script src="./js/owl.carousel.min.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>
